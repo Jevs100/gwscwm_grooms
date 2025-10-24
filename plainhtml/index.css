@@ -1,0 +1,79 @@
+/* Brand colors */
+:root{
+  --brand-green: #e8f3de; /* background like your logo */
+  --brand-black: #111;
+}
+
+body{
+  margin:0;
+  background: var(--brand-green);
+  color: var(--brand-black);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font-size: 12px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.logo{
+  text-align: center;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.logo__text{
+  text-align: left;
+}
+
+/* "GWSCWM GROOMS" */
+.logo__title{
+  font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 600;       /* SemiBold */
+  letter-spacing: 0.12em; /* spaced like the logo */
+  font-size: clamp(22px, 4vw, 36px);
+  text-transform: uppercase;
+}
+
+/* "Dog Grooming" */
+.logo__tagline{
+  font-family: "Allura", "Brush Script MT", "Segoe Script", cursive;
+  font-size: clamp(22px, 3.5vw, 34px);
+  margin-top: 6px;
+}
+
+.logo__image{
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.logo-highlight {
+    color: #81655D;
+}
+
+.content__image {
+    width: 500px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.content {
+    display: flex;
+}
+
+.content__text {
+    max-width: 500px;
+    margin-left: 24px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Legacy color references 
+text-color: #20201A;
+primary: #81655D;
+secondary: #747864;
+*/
