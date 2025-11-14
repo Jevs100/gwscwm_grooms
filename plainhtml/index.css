@@ -1,27 +1,73 @@
 /* Brand colors */
+
+/* 
+
+--------- Colours ---------
+
+PRIMARY 
+Base: #E6F1D1
+Tint: #f8fbf1
+Shade: #8a917d 
+
+Secondary 
+Base: #F4B7A0
+Tint: #f7cdbd
+Shade: #ab8070
+
+TERTIARY: 
+Base: #C7E4E0
+Tint: #d2e9e6
+Shade: #9fb6b3
+
+GREY: 
+Base: #e7e5e3
+Tint: #eceae9
+Shade: #b9b7b6
+*/
+
+
 :root{
-  --brand-green: #e8f3de; /* background like your logo */
-  --brand-black: #111;
+  --brand-primary: #e8f3de; /* background like your logo */
+  --brand-secondary: #81655D;; /* accent color */
+  --brand-tertiary: #c7e4e0; /* secondary accent color */
+  --brand-grey: #e7e5e3; /* neutral color */
+  --brand-black: #20201a; /* text color */
 }
 
 body{
-  margin:0;
-  background: var(--brand-green);
+  margin: 0;
+  padding: 20px;
+  background-color: var(--brand-grey);
   color: var(--brand-black);
-  display: grid;
-  place-items: center;
   min-height: 100vh;
-  font-size: 12px;
+  font-size: 16px;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background-color: #f9f9f9;
 }
+.nav-bar {
+  background-color: var(--brand-primary);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
 
 .logo{
   text-align: center;
-  padding: 24px;
   display: flex;
   align-items: center;
-  gap: 20px;
-  justify-content: center;
+  gap: 10px;
 }
 
 .logo__text{
@@ -33,20 +79,18 @@ body{
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-weight: 600;       /* SemiBold */
   letter-spacing: 0.12em; /* spaced like the logo */
-  font-size: clamp(22px, 4vw, 36px);
   text-transform: uppercase;
 }
 
 /* "Dog Grooming" */
 .logo__tagline{
   font-family: "Allura", "Brush Script MT", "Segoe Script", cursive;
-  font-size: clamp(22px, 3.5vw, 34px);
   margin-top: 6px;
 }
 
 .logo__image{
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -55,21 +99,180 @@ body{
     color: #81655D;
 }
 
-.content__image {
-    width: 500px;
-    height: auto;
+.card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 800px;
+    border-radius: 16px;
+    background-color: var(--brand-primary);
+    border: none;
+}
+
+.card-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.card-text h2 {
+    font-family: "Montserrat", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0 0 15px 0;
+    color: var(--brand-black);
+}
+
+.card-text p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    color: var(--brand-black);
+}
+
+.card-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.card-buttons.centre {
+    justify-content: center;
+}
+
+.card-image {
+    flex: 0 0 360spx;
+}
+
+.card-image img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
     border-radius: 12px;
 }
 
-.content {
-    display: flex;
+/* Button Styles */
+.button-primary, .button-secondary {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid var(--brand-secondary);
+
 }
 
-.content__text {
-    max-width: 500px;
-    margin-left: 24px;
-    font-size: 18px;
-    line-height: 1.6;
+.button-primary {
+    background-color: var(--brand-secondary);
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: transparent;
+    color: var(--brand-black);
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    background-color: transparent;
+    color: var(--brand-black);
+}
+
+.button-secondary:hover {
+    background-color: var(--brand-secondary);
+    color: white;
+    transform: translateY(-2px);
+
+}
+
+.button-primary a, .button-secondary a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .nav-bar {
+        padding: 10px 15px;
+    }
+    
+    .logo__title {
+        font-size: 14px;
+    }
+    
+    .logo__tagline {
+        font-size: 12px;
+    }
+    
+    .logo__image {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .nav-buttons {
+        gap: 10px;
+    }
+    
+    .nav-buttons .button-primary,
+    .nav-buttons .button-secondary {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .card {
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px auto;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .card-text {
+        padding-right: 0;
+        order: 2;
+    }
+    
+    .card-image {
+        flex: none;
+        width: 100%;
+        order: 1;
+    }
+    
+    .card-image img {
+        height: 200px;
+    }
+    
+    .card-text h2 {
+        font-size: 24px;
+    }
+    
+    .card-text p {
+        font-size: 16px;
+    }
+    
+    .card-buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        margin: 15px;
+        padding: 15px;
+    }
+    
+    .card-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .button-primary, .button-secondary {
+        width: 200px;
+        text-align: center;
+    }
 }
 
 /* Legacy color references 
