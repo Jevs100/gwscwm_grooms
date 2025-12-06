@@ -1,39 +1,17 @@
-"""This is the main FastAPI application Module."""
+"""This module is the main module"""
 
-from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from modules.databases.mysql_manager import MysqlManager
-import uvicorn
-import os
+# from modules.db.database import engine
+# from modules.models.models import Base
 
-DATABASE_URL = os.getenv("DATABASE_URL", "mysql+aiomysql://user:password@localhost/dbname")
-database = MysqlManager.from_env()
+app = FastAPI()
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # startup: connect the database manager
-    await database.startup()
-    app.state.database = database
-    try:
-        yield
-    finally:
-        # shutdown: disconnect the database manager
-        await database.shutdown()
+# # Create the database tables
+# Base.metadata.create_all(bind=engine)
 
-app = FastAPI(title="Simple FastAPI App", version="0.1.0", lifespan=lifespan)
-
+# Include the API router
 
 @app.get("/")
-async def read_root():
-    return {"message": "Hello from FastAPI"}
-
-@app.get("/health")
-async def health():
-    return {"status": "ok"}
-
-@app.get("/josh")
-async def read_josh():
-    return {"message": "Hello Josh"}
-
-if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000)
+def read_root():
+    """Root endpoint"""
+    return {"message": "Welcome to the FastAPI MySQL app!"}

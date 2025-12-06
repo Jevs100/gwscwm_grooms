@@ -1,3 +1,10 @@
-fastapi[standard]
-sqlmodel[asyncio] 
-aiomysql
+fastapi
+uvicorn
+sqlalchemy
+mysqlclient
+alembic
+pydantic
+python-dotenv
+fastapi-users[sqlalchemy]
+mysql
+passlib[bcrypt]
