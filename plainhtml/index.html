@@ -8,7 +8,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
-  
+<script src="https://kit.fontawesome.com/e4b49517f7.js" crossorigin="anonymous"></script>
+  <!-- Lottie Web -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
   <!-- Custom Styles -->
   <link rel="stylesheet" href="index.css">
 </head>
@@ -26,23 +28,28 @@
     <div class="button-secondary"><a href="#">Register</a></div>
   </div>
   </div>
-  <div class="card">
+  <div class="card card-colour-1">
     <div class="card-text">
+      <h2>At Gwscem all dogs are welcome from all kinds</h2>
+      <ul>
+        <li><i class="fa-solid fa-check"></i>Friendly environment</li>
+        <li><i class="fa-solid fa-check"></i>Experienced groomer</li>
+        <li><i class="fa-solid fa-check"></i>Plenty of Treats</li>
+      </ul>
       <div class="card-buttons centre">
         <div class="button-primary"><a href="#">Book Now</a></div>
       </div>
     </div>
     <div class="card-image">
-      <img src="images/dogs_bath.png" alt="Dogs being groomed">
+      <div id="lottie-animation" style="width: 100%; height: 100%; background: transparent; filter: contrast(1.2) brightness(1.1); mix-blend-mode: multiply;"></div>
     </div>
   </div>
 
-  <div class="card">
+  <div class="card card-colour-2">
     <div class="card-text">
       <h2>Walking Service</h2>
       <p>Professional dog walking services to keep your furry friend active and healthy while you're away.</p>
       <div class="card-buttons">
-        <div class="button-primary"><a href="#">Book</a></div>
         <div class="button-secondary"><a href="#">Learn More</a></div>
       </div>
     </div>
@@ -51,12 +58,11 @@
     </div>
   </div>
 
-  <div class="card">
+  <div class="card card-colour-1">
     <div class="card-text">
-      <h2>Special Treats</h2>
+      <h2>Read Our Reviews</h2>
       <p>Celebrate your dog's special moments with our custom treats and party packages for birthdays and special occasions.</p>
       <div class="card-buttons">
-        <div class="button-primary"><a href="#">Book</a></div>
         <div class="button-secondary"><a href="#">Learn More</a></div>
       </div>
     </div>
@@ -64,5 +70,53 @@
       <img src="images/dog_cake.png" alt="Dog with birthday cake">
     </div>
   </div>
+
+  <script>
+    // Initialize Lottie animation
+    console.log('Starting Lottie animation setup...');
+    
+    // Check if lottie is loaded
+    if (typeof lottie === 'undefined') {
+      console.error('Lottie library not loaded!');
+    } else {
+      console.log('Lottie library loaded successfully');
+    }
+    
+    const animationContainer = document.getElementById('lottie-animation');
+    if (!animationContainer) {
+      console.error('Animation container not found!');
+    } else {
+      console.log('Animation container found');
+    }
+    
+    const animation = lottie.loadAnimation({
+      container: animationContainer,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'images/animation.json',
+      rendererSettings: {
+        clearCanvas: true,
+        progressiveLoad: false,
+        hideOnTransparent: true
+      }
+    });
+    
+    animation.addEventListener('complete', function() {
+      console.log('Animation completed one loop');
+    });
+    
+    animation.addEventListener('DOMLoaded', function() {
+      console.log('Animation DOM loaded');
+    });
+    
+    animation.addEventListener('data_ready', function() {
+      console.log('Animation data ready');
+    });
+    
+    animation.addEventListener('error', function(error) {
+      console.error('Animation error:', error);
+    });
+  </script>
 </body>
 </html>

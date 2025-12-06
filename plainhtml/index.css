@@ -5,55 +5,66 @@
 --------- Colours ---------
 
 PRIMARY 
-Base: #E6F1D1
+Base: #eec6bd
 Tint: #f8fbf1
 Shade: #8a917d 
 
 Secondary 
-Base: #F4B7A0
+Base: #E9CBBA
 Tint: #f7cdbd
 Shade: #ab8070
 
 TERTIARY: 
-Base: #C7E4E0
+Base: #EEC6BD
 Tint: #d2e9e6
 Shade: #9fb6b3
 
-GREY: 
-Base: #e7e5e3
-Tint: #eceae9
-Shade: #b9b7b6
+WHITE: 
+Base: #FFFFFF
+
+BLACK: 
+Base: #020305
 */
 
 
 :root{
-  --brand-primary: #e8f3de; /* background like your logo */
-  --brand-secondary: #81655D;; /* accent color */
-  --brand-tertiary: #c7e4e0; /* secondary accent color */
-  --brand-grey: #e7e5e3; /* neutral color */
-  --brand-black: #20201a; /* text color */
+  --brand-primary: #E5EFD2; /* background like your logo */
+  --brand-secondary: #E9CBBA;; /* accent color */
+  --brand-tertiary: #EEC6BD; /* secondary accent color */
+  --brand-grey: #FFFFFF; /* neutral color */
+  --brand-black: #020305; /* text color */
 }
 
 body{
   margin: 0;
   padding: 20px;
-  background-color: var(--brand-grey);
+  /* background-color: var(--brand-grey); */
   color: var(--brand-black);
   min-height: 100vh;
   font-size: 16px;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background-color: #f9f9f9;
 }
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    margin-top: 10px;
+}
+
 .nav-bar {
-  background-color: var(--brand-primary);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* background-color: var(--brand-primary); */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
   padding: 10px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
-  z-index: 100;
+  /* z-index: 100; */
 }
 
 .nav-buttons {
@@ -68,6 +79,7 @@ body{
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 18px;
 }
 
 .logo__text{
@@ -77,7 +89,7 @@ body{
 /* "GWSCWM GROOMS" */
 .logo__title{
   font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  font-weight: 600;       /* SemiBold */
+  font-weight: 800;       /* SemiBold */
   letter-spacing: 0.12em; /* spaced like the logo */
   text-transform: uppercase;
 }
@@ -107,10 +119,16 @@ body{
     margin: 30px auto;
     max-width: 800px;
     border-radius: 16px;
-    background-color: var(--brand-primary);
     border: none;
 }
 
+.card-colour-1 {
+    background-color: var(--brand-primary);
+}
+
+.card-colour-2 {
+    background-color: var(--brand-tertiary);
+}
 .card-text {
     flex: 1;
     padding-right: 20px;
@@ -137,9 +155,9 @@ body{
     flex-wrap: wrap;
 }
 
-.card-buttons.centre {
+/* .card-buttons.centre {
     justify-content: center;
-}
+} */
 
 .card-image {
     flex: 0 0 360spx;
@@ -167,24 +185,23 @@ body{
 
 .button-primary {
     background-color: var(--brand-secondary);
-    color: white;
+    color: var(--brand-black);
 }
 
 .button-primary:hover {
     background-color: transparent;
     color: var(--brand-black);
-    transform: translateY(-2px);
 }
 
 .button-secondary {
-    background-color: transparent;
+    background-color: var(--brand-grey);
     color: var(--brand-black);
 }
 
 .button-secondary:hover {
     background-color: var(--brand-secondary);
     color: white;
-    transform: translateY(-2px);
+    /* transform: translateY(-2px); */
 
 }
 
